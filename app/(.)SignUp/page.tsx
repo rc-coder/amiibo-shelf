@@ -8,7 +8,7 @@ export default function SignUpModal() {
   const [open, setOpen] = useState(true);
 
   return (
-    <Transition.Root show={open} as={Fragment}>
+    <Transition.Root show={true} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
           as={Fragment}

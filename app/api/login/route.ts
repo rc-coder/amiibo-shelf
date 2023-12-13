@@ -20,11 +20,14 @@ export async function POST(request: Request) {
     const { password, ...userWithoutPass } = user;
 
     return new Response(JSON.stringify(userWithoutPass));
+
     //   return NextResponse.json(
     //     { userWithoutPass, message: 'Login succesful' },
     //     { status: 201 }
     //   );
     // } else {
     //   return new Response(JSON.stringify(null));
+  } else {
+    return new Response(JSON.stringify(null));
   }
 }

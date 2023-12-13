@@ -84,7 +84,7 @@ export const SignUpForm = () => {
         <div className="flex items-center justify-center mt-2 gap-2">
           {' '}
           <Button type="submit" className="w-28">
-            Sign Un
+            Sign Up
           </Button>
           <Link
             href="/SignIn"

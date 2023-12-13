@@ -15,6 +15,22 @@ model User {
   email   String   @unique
   name String @unique
   password String
+  amiibos Amiibo[]
   createdAt DateTime @default(now())
   UpdatedAt DateTime @updatedAt
+
+}
+
+model Amiibo {
+  id Int @id @default(autoincrement())
+  amiiboSeries String
+  character String
+  gameSeries String
+  image String
+  name String 
+  type String
+  head String 
+  tail String
+  owner User @relation(fields: [ownerId], references: [id])
+  ownerId Int 
 }
