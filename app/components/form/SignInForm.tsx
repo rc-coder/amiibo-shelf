@@ -20,7 +20,7 @@ const SignInForm = (props: Props) => {
     async function signInUser(formData: FormData) {
       const { username, password } = Object.fromEntries(formData.entries());
 
-      const { error } = signInSchema.safeParse({
+      const { error }: any = signInSchema.safeParse({
         username,
         password,
       });
