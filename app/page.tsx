@@ -23,18 +23,15 @@ export default async function Home() {
   });
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center align-middle w-full h-full">
       {session && session.user ? (
         <div>
-          <div className="flex justify-center w-full">
-            <h1 className="text-5xl text-center p-6 text-sky-700">
-              Welcome {session.user.name}!
+          <div className="flex justify-start w-full ">
+            <h1 className="text-5xl text-center p-6 ">
+              {session.user.name}&apos;s Shelf
             </h1>
           </div>
           <section>
-            <div className="p-4 text-lg">
-              <h2>Your Shelf</h2>
-            </div>
             {storedAmiibos.length > 0 ? (
               <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                 {storedAmiibos.map((amiibo) => (
@@ -49,7 +46,7 @@ export default async function Home() {
             ) : (
               <div>
                 Your shelf is empty, go{' '}
-                <Link href={'/SearchAmiibo'} className="text-blue-600">
+                <Link href={'/SearchAmiibo'} className="text-teal-600">
                   search
                 </Link>{' '}
                 and add some amiibo
@@ -58,10 +55,17 @@ export default async function Home() {
           </section>
         </div>
       ) : (
-        <div className="flex justify-center align-middle items-center w-full h-full">
-          <h1 className="text-5xl p-6 text-sky-700">
-            Welcome to amiibo shelf!
-          </h1>
+        <div className="flex flex-col gap-4 justify-center align-middle items-center w-full h-full">
+          <span className="text-base font-semibold leading-6 text-white bg-teal-500 p-6 rounded-lg mt-40">
+            <h1 className="text-5xl">Welcome to amiibo shelf!</h1>
+          </span>
+          <div>
+            You can display your amiibo, go{' '}
+            <Link href={'/SignUp'} className="text-teal-600">
+              sign up
+            </Link>
+            .
+          </div>
         </div>
       )}
     </div>

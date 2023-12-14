@@ -47,9 +47,10 @@ const SignInForm = (props: Props) => {
 
   return (
     <div className={props.classname}>
-      <div className="text-base font-semibold leading-6 text-gray-900 bg-gradient-to-b from-slate-50 to-slate-200 p-2">
+      <div className="text-base font-semibold leading-6 text-white bg-teal-500 p-2 rounded-lg">
         Log In Form
       </div>
+
       <form
         action={clientAction}
         className="p-2 flex flex-col gap-3"
@@ -80,8 +81,8 @@ const SignInForm = (props: Props) => {
           </p>
         )}
         <div className="flex items-center justify-center mt-2 gap-2">
-          <Button type="submit" className="w-28">
-            Sign In
+          <Button type="submit" className="w-28" variant="success">
+            Log In
           </Button>
           <Link
             href={props.callbackUrl ?? '/SignUp'}

@@ -22,7 +22,7 @@ export const SignUpForm = () => {
 
   return (
     <div>
-      <div className="text-base font-semibold leading-6 text-gray-900 bg-gradient-to-b from-slate-50 to-slate-200 p-2 w-full">
+      <div className="text-base font-semibold leading-6 text-white bg-teal-500 p-2 rounded-lg">
         Sign up Form
       </div>
       <form
@@ -82,8 +82,7 @@ export const SignUpForm = () => {
           </p>
         )}
         <div className="flex items-center justify-center mt-2 gap-2">
-          {' '}
-          <Button type="submit" className="w-28">
+          <Button type="submit" className="w-28" variant="success">
             Sign Up
           </Button>
           <Link

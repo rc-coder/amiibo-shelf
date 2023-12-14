@@ -9,8 +9,11 @@ const SignInButton = () => {
   if (session && session.user) {
     return (
       <div className="flex gap-2 ml-auto" title="Log Out">
-        <p className="text-sky-600">{session.user.name}</p>
-        <button onClick={() => signOut()} className="text-red-800">
+        <p className="text-white">{session.user.name}</p>
+        <button
+          onClick={() => signOut()}
+          className="text-red-600 hover:text-red-500"
+        >
           <AiOutlineLogout size={22} />
         </button>
       </div>
@@ -19,7 +22,7 @@ const SignInButton = () => {
   return (
     <Link href={'/SignIn'} className="text-slate-950 ml-auto" title="Login">
       <div className="flex gap-2 ml-auto">
-        <p className="text-green-700">Login</p>
+        <p className="text-white">Login</p>
         <AiOutlineLogin size={25} />
       </div>
     </Link>
