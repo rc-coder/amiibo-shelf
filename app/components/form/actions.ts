@@ -12,7 +12,7 @@ export async function createUser(formData: FormData) {
     formData.entries()
   );
 
-  const { error } = signUpSchema.safeParse({
+  const { error }: any = signUpSchema.safeParse({
     username,
     email,
     password,
