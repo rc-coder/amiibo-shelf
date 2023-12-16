@@ -21,8 +21,8 @@ export async function createUser(formData: FormData) {
   if (error) {
     return { error: error.format() };
   }
-
-  const response = await fetch('http://localhost:3000/api/user', {
+  //Local 'http://localhost:3000/api/user'
+  const response = await fetch('/api/user', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -49,7 +49,8 @@ export async function addAmiibo(formData: FormData) {
   const session = await getServerSession(authOptions);
   const userId = Number(session.user.id);
 
-  const response = await fetch('http://localhost:3000/api/addAmiibo', {
+  //Local 'http://localhost:3000/api/addAmiibo'
+  const response = await fetch('/api/addAmiibo', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -77,8 +78,9 @@ export async function addAmiibo(formData: FormData) {
 
 export async function removeAmiibo(formData: FormData) {
   const { head, tail } = Object.fromEntries(formData.entries());
+  //Local 'http://localhost:3000/api/removeAmiibo'
 
-  const response = await fetch('http://localhost:3000/api/removeAmiibo', {
+  const response = await fetch('/api/removeAmiibo', {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
